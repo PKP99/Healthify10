@@ -22,8 +22,11 @@
         "@splidejs/vue-splide": "^0.3.5",
         "bootstrap": "^4.6.0",
         "bootstrap-vue": "^2.21.2",
+        "firebase": "^8.4.1",
+        "firebaseui": "^4.8.0",
         "vue": "^2.6.12",
         "vue-not-visible": "^1.0.9",
-        "vue-router": "^3.5.1"
+        "vue-router": "^3.5.1",
+        "vuex": "^3.6.2"
     }
 }

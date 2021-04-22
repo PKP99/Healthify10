@@ -25,7 +25,7 @@ class FoodController extends Controller
 
     public function show(food $food)
     {
-        
+        //
     }
 
     public function edit(food $food)

@@ -18,3 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//List users
+Route::get('usersd','App\Http\Controllers\userdController@index');
+
+//List single user
+Route::get('userd/{id}','App\Http\Controllers\userdController@show');
+
+//Create new user
+Route::post('userd','App\Http\Controllers\userdController@store');
+
+//Update user
+Route::put('userd','App\Http\Controllers\userdController@update');

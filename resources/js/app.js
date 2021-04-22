@@ -4,7 +4,13 @@ import Vue from 'vue';
 import router from './index';
 import App from './health/src/App';
 
-import vueNotVisible from 'vue-not-visible'
+import firebase from "firebase";
+import store from "./health/src/store";
+
+import vueNotVisible from 'vue-not-visible';
+
+Vue.config.productionTip = false;
+
 
 
 /* const BREAKPOINTS = {
@@ -29,10 +35,29 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
-const app = new Vue({
+const firebaseConfig = {
+    apiKey: "AIzaSyAbkrsmFF1Frwy_VWwg1I6BNEl5hHTko2g",
+    authDomain: "healthify10.firebaseapp.com",
+    databaseURL: "https://healthify10-default-rtdb.firebaseio.com",
+    projectId: "healthify10",
+    storageBucket: "healthify10.appspot.com",
+    messagingSenderId: "983791010618",
+    appId: "1:983791010618:web:0c3e9db536ac8b9f750603",
+    measurementId: "G-G1QGK0SRW3"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged(user => {
+    store.dispatch("fetchUser", user);
+  });
+
+  const app = new Vue({
     el: '#app',
     components : {
         App
     },
-    router
+    router,
+    store
 });
