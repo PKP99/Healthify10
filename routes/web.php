@@ -16,9 +16,8 @@ use App\Http\Controllers\FoodController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/Home');
-});
+
+Route::get('/','App\Http\Controllers\FoodController@index');
 
 Route::get('/Home','App\Http\Controllers\FoodController@index');
 
