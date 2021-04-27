@@ -41,18 +41,17 @@ class userdController extends Controller
     {
         $input = $request->all();
         
-        $userd = new userd;
-
-            $userd->id = $input->id;
-            $userd->Email = $input->Email;
-            $userd->Weight = $input->Weight;
-            $userd->Height = $input->Height;
-            $userd->DOB = $input->DOB;
-            $userd->Gender = $input->Gender;
-            $userd->BMR = $input->BMR;
-            $userd->created_at = null;
-            $userd->updated_at = null;
-
+        $userd = new userd([
+            'id' => $input -> get('id'),
+            'Email' => $input -> get('Email'),
+            'Weight' => $input -> get('Weight'),
+            'Height' => $input -> get('Height'),
+            'DOB' => $input -> get('DOB'),
+            'Gender' => $input -> get('Gender'),
+            'BMR' => $input -> get('BMR'),
+            'created_at' => null,
+            'updated_at' => null
+        ]);
         $userd -> save();
 
         return response()->json([
