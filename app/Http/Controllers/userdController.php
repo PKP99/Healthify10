@@ -42,6 +42,7 @@ class userdController extends Controller
         $input = $request->all();
         
         $userd = userd::create($input);
+        
         return response()->json([
             "success" => true,
             "message" => "Student created successfully.",
