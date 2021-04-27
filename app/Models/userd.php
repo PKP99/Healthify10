@@ -10,6 +10,6 @@ class userd extends Model
     protected $table = 'userd';
     use HasFactory;
     protected $fillable = [
-        'Email','Weight', 'Height', 'DOB', 'Gender', 'BMR'
+        'id','Email','Weight', 'Height', 'DOB', 'Gender', 'BMR'
     ];
 }
