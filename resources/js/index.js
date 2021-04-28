@@ -73,5 +73,8 @@ export default new VueRouter({
     component: Calorie
     }
   ],
-  mode: "history"
+  mode: "history",
+  scrollBehavior() {
+        return {x: 0, y: 0}
+    }
 })
